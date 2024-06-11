@@ -42,14 +42,17 @@ export default function Home() {
         setLoading(false);
   }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <div className="flex min-h-screen flex-col items-center justify-evenly p-24 bg-zinc-100">
+      <h1 className="w-full text-center text-2xl sm:text-4xl text-nowrap">Data Lake File Uploader</h1>
+    <main >
       <div className="grid w-full max-w-sm items-center gap-2">
       <Label htmlFor="picture">File</Label>
-      <div className="flex gap-3">
+      <div className="flex gap-3 flex-col sm:flex-row">
         <Input id="picture" type="file" onChange={handleFileChange} accept =".csv,application/vnd.openxmlformats-oficedocument.spreadsheetml.sheet,application/vnd.ms-excel"/>
         <Button onClick={handleFileUpload} disabled={loading}>Upload</Button>
         </div>
     </div>
     </main>
+    </div>
   );
 }

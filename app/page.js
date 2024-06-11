@@ -30,7 +30,7 @@ export default function Home() {
 
       if (data) {
         toast({
-          description: "Your file is updated successfully.",
+          description: "Your file is uploaded successfully.",
         })
        }
       else{

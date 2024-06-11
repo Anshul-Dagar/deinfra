@@ -18,7 +18,11 @@ export default function Home() {
 
   const handleFileUpload = async () =>{
       if(!file) {
-          return;
+        toast({
+          variant: "destructive",
+          description: "File not selected",
+        })
+        return;
       }
       setLoading(true);
 
@@ -26,13 +30,16 @@ export default function Home() {
 
       if (data) {
         toast({
-          description: "Your file has been uploaded successfully.",
-        });
-        setLoading(false);
+          description: "Your file is updated successfully.",
+        })
        }
       else{
-        console.log(error)
+        toast({
+          variant: "destructive",
+          description: `${error.message}`,
+        })
         }
+        setLoading(false);
   }
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
